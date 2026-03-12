@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/Jura-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+    <meta name="description" content="Explore fascinating facts about Jupiter, the largest planet in our solar system. Discover its Great Red Spot, many moons, and stunning high-resolution imagery.">
 </head>
 <body> 
     <!-- headeren/logo og nav baren, My adde en anchor også, Kommer etter kvart -->
@@ -25,7 +24,7 @@
 <!-- Main er da "explore jupiter" og topp forklaringen -->
     <main>
         <div class="planet-wrapper">
-            <img src="images/jupiter.png" alt="color rich jupiter">
+            <img src="images/jupiter.webp" alt="color rich jupiter" fetchpriority="high" type="image/webp">
             <section id="hero">
                 <h1 class="title">JUPITER</h1>                                                               <!-- Endra class names, fiksa indentations, fjerna main class declaration og tok i bruk sections -->
                 <p class="tagline">A world too vast for the mind <br> to fully hold</p>
@@ -33,12 +32,12 @@
             </section>
             <section id="facts">
                 <h2>Facts</h2>
-                <p></p>
+                <p>some blabla </p>
             </section>
         </div>
         <section id="pictures">
-            <h2></h2>
-            <p></p>
+            <h2>some text for testing</h2>
+            <p>some text for </p>
         </section>
     </main>
 </body>
