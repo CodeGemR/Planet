@@ -6,33 +6,40 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body> 
     <!-- headeren/logo og nav baren, My adde en anchor også, Kommer etter kvart -->
 <header> 
-    <nav class="planetnav">
-        <Div class="logo">JUPITER</Div>
-        <ul>
-        <li>Home</li>
-        <li>Facts</li>
-        <li>Pictures</li>
-        </ul>
+    <nav class="navbar">
+        <div class="logo">JUPITER</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#facts">Facts</a></li>
+                <li><a href="#pictures">Pictures</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 <!-- Main er da "explore jupiter" og topp forklaringen -->
-<main class="container">
-    <h1 class="title">
-        JUPITER
-    </h1>
-    <p>
-        A world too vast for the mind to fully hold
-    </p>
-    <!-- classe på p'n var nødvending for border -->
-    <p class="exploreBorder">
-        Explore Jupiter
-    </p>
-</main>
+    <main>
+        <div class="planet-wrapper">
+            <img src="images/jupiter.png" alt="color rich jupiter">
+            <section id="hero">
+                <h1 class="title">JUPITER</h1>                                                               <!-- Endra class names, fiksa indentations, fjerna main class declaration og tok i bruk sections -->
+                <p class="tagline">A world too vast for the mind <br> to fully hold</p>
+                <a class="cta-btn" href="#facts">Explore Jupiter</a>                  <!-- Endra til anchor tag, p tag funka ikkje som button -->
+            </section>
+            <section id="facts">
+                <h2>Facts</h2>
+                <p></p>
+            </section>
+        </div>
+        <section id="pictures">
+            <h2></h2>
+            <p></p>
+        </section>
+    </main>
 </body>
 </html>

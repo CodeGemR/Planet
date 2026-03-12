@@ -1,3 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    font-family: "jura",sans-serif; 
+    overflow-x: hidden;
+    color:white;
+}
+
+main{
+    position: relative;
+    z-index: 0;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .jura-font {
   font-family: "Jura", sans-serif;
   font-optical-sizing: auto;
@@ -5,40 +33,65 @@
   font-style: normal;
 }
 
-
-body{
-    background-color: black;
-    font-family: "jura",sans-serif; 
-    background-size: 100;  
-    background-image: url(./images/jupiter.png);
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.planetnav{
+.navbar{
     display: flex;
-    color:white;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
 }
 
-.planetnav ul{
+li, a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar ul{
     display: flex;
     list-style: none;
     flex-direction: row;
-    gap: 10px;
-    border: 3px double transparent;
+    gap: 20px;
+    padding: 12px 25px;
     border-radius: 15px;
-    padding: 10px;  
-    background-image:  linear-gradient(black, black),linear-gradient(to right, #F36E1D, #136CD0);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    position: relative;
+    margin-top: 14px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.navbar ul::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+                                                                             /* Bruka pseudo element ::before for å få til glassmorphism container med border uten at dei kræsja  */
+    background: linear-gradient(to right, #F36E1D, #136CD0);
+
+    mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);       /* mask-image og mask-clip laga to masks (en for content, en for border)*/
+    mask-clip: content-box, border-box;
+
+    mask-composite: exclude;                                                    /* Her magien skjer, mask-composite: exclude fjerna inner area fra mask, etterlata kun border synlig i mens glassmorphism vise gjøna under */
+    pointer-events: none;
+}
+
+.navbar ul li a {
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+    display: inline-block;
+    backface-visibility: hidden;
+    
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+    text-shadow: 
+    0 0 8px #fff,
+    0 0 15px #F36E1D,
+    0 0 30px #F36E1D,
+    0 0 40px rgba(19, 108, 208, 0.8);
+    
+    transform: scale(1.1);
 }
 
 .logo{
@@ -48,30 +101,67 @@ body{
     margin-left: 20px;
     padding: 10px;
     font-size: 25px;
+    text-decoration: underline;
 }
 
-.container{
+.planet-wrapper {
+    position: relative;
+    
+}
+
+.planet-wrapper img {
+    position: absolute;
+    left: 500px;
+    width: 1720px;
+    height: auto;
+    filter: drop-shadow(0px 0px 60px rgba(176, 149, 132, 0.4));
+}
+
+#hero, #facts, #pictures {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.title {
+    font-size: 8em;
+}
+
+.tagline {
+    font-size: 2rem;
+    color: #dadada;
+}
+
+#hero {
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
+    padding-left: 5%;
+    position: relative;
+    gap: 14px;
+    
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 16px 40px ;
+    font-size: 1.4em;
+    font-weight: 600;
     color: white;
-    gap: 30px;
-    padding: 100px;
-    width: 26rem;
-    margin-left: -75px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+
+    border: 2px solid transparent;
+    background: 
+    linear-gradient(#000, #000) padding-box,
+    linear-gradient(to right, #F36E1D, #136CD0) border-box; 
 }
 
-.title{
-    font-size: 50px;
-}
-
-.exploreBorder{
-    display: flex;
-    border: 3px double transparent;
-    border-radius: 10px;
-    padding: 10px;  
-    background-image:  linear-gradient(black, black),linear-gradient(to right, #F36E1D, #136CD0);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-
+.cta-btn:hover {
+    box-shadow: 
+    0 0 20px rgba(19, 108, 208, 0.6),               /* Glow effect on hover på button */
+    inset 0 0 15px rgba(243, 110, 29, 0.5);
+    transform: translateY(-3px)
 }
