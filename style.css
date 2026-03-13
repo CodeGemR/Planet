@@ -165,3 +165,36 @@ li, a {
     inset 0 0 15px rgba(243, 110, 29, 0.5);
     transform: translateY(-3px)
 }
+
+.factsLogo{
+    display: flex;
+    font-size: 4em;
+    padding: 1.5em;
+}
+
+.fact-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 5em;
+    align-items: start;
+    padding-left: 5%;
+    column-gap: 4em;
+}
+
+.card-1{
+    border: 1px solid;
+    padding: 1.5em;
+}
+.card-2{
+    border: 1px solid;
+    padding: 1.5em;
+}
+.card-3{
+    border: 1px solid;
+    padding: 1.5em;
+}
+.card-4{
+    border: 1px solid;
+    padding: 1.5em;
+}
